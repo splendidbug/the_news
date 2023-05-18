@@ -4,7 +4,7 @@ import './css_files/navbar.css';
 const navigation_items = [
   { name: 'Home', href: '/'},
   { name: 'Following', href: '/Following'},
-  { name: 'U.S.....', href: '/US'},
+  { name: 'U.S.', href: '/US'},
   { name: 'World', href: '/World'},
   { name: 'Localllll', href: '/Local'},
   { name: 'Business', href: '/Business'},
