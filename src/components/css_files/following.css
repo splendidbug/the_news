@@ -1,0 +1,9 @@
+.body{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}

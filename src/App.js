@@ -10,20 +10,26 @@ import {Business} from './components/pages/Business'
 import {Entertainment} from './components/pages/Entertainment'
 import {Following} from './components/pages/Following'
 
+const navigation_items = [
+  { element: Home, href: '/'},
+  { element: Following, href: '/Following'},
+  { element: US, href: '/US'},
+  { element: World, href: '/World'},
+  { element: Local, href: '/Local'},
+  { element: Business, href: '/Business'},
+  { element: Technology, href: '/Technology'},
+  { element: Entertainment, href: '/Entertainment'},
+]
+
+
 function App() {
   return (
     <>
         <Navbar />
         <Routes>
-            <Route path ='/' element={<Home />}></Route>
-            <Route path ='about' element={<About/>}></Route>
-            <Route path ='US' element={<US />}></Route>
-            <Route path ='Local' element={<Local/>}></Route>
-            <Route path ='Technology' element={<Technology />}></Route>
-            <Route path ='World' element={<World/>}></Route>
-            <Route path ='Business' element={<Business />}></Route>
-            <Route path ='Entertainment' element={<Entertainment/>}></Route>
-            <Route path ='Following' element={<Following/>}></Route>
+            {navigation_items.map((item) => (
+                <Route path ={item.href} element={<item.element />}></Route>
+            ))}
         </Routes>
     </>
   )
