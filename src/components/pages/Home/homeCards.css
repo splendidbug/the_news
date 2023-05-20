@@ -123,10 +123,10 @@ body {
   opacity: 1 !important;
 }
 .container {
-  max-width: 700px;
+  overflow-x: scroll;
+  width: 600px;
   min-width: 440px;
-  margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .container:before,
