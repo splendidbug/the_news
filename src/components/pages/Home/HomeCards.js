@@ -1,46 +1,27 @@
-import './homeCards.css'
+import React from 'react';
+import './homeCards.css';
 
-function handleMouseEnter(e){
-    console.log();
-}
 
-export const HomeCards = ({news_data}) => {
+export const HomeCards = ({news_data, type})  => {
 
-    return(
-        <div> 
-            <div class='container'> {/*need to make this container scrollable*/}
-                {news_data.map(news => {
-                    return (
-                        <div class='column'>
-                            <div class='post-module' onMouseEnter={handleMouseEnter}>
-                                <div class='thumbnail'>
-                                    <div class='date'>
-                                    <div class='day'>{news.day}</div>
-                                    <div class='month'>{news.month}</div>
-                                    </div>
-                                    <img src={news.img}/>
-                                </div>
-                                <div class='post-content'>
-                                    <h1 class='title'>{news.name}</h1>
-                                    <h2 class='sub_title'>{news.name}</h2>
-                                    <p class='description'>{news.description}</p>
-                                    <div class='post-meta'>
-                                        <span class='timestamp'>
-                                            <i class='fa fa-clock-o'></i>
-                                            {news.time}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                
-                    );
-                })}  
-                
-
-            </div>
-            
+    return (
+      <div className='main-container'>
+        <p className='card-type'>{type}</p>
+        <div className='card-container'>
+          {news_data.map(news => {
+            return (
+              <div className='card'>
+                <img src = {news.img} className='card-image' />
+                <h2 className='news-name'>{news.name}</h2>
+                <p className='card-desc'>{news.description}</p>
+                <div className='date'>
+                  <div className='day' style={{fontSize: 15 + 'px'}}>{news.day}</div>
+                  <div className='month' style={{fontSize: 12 + 'px', textTransform: 'uppercase'}} >{news.month}</div>
+                </div>
+              </div>
+            );
+          })}  
         </div>
-
-
-    )
-}   
+      </div>
+      );
+}
